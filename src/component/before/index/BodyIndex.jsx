@@ -5,21 +5,20 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import ResepImage from "../../../assets/img/1.png";
 import ResepImage2 from "../../../assets/img/2.png";
 import ResepImage3 from "../../../assets/img/3.png";
-import imgReview1 from "../../../assets/img/cristiano-ronaldo_169.jpeg";
-import imgReview2 from "../../../assets/img/lionel-messi-1711467863-132837.jpg";
 
 const Index = () => {
   const [contact, setContact] = useState([]);
 
   useEffect(() => {
+    console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
     getContact();
   }, []);
 
   const getContact = async () => {
     try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/contacts`
-      );
+      const apiUrl = `${import.meta.env.VITE_API_URL}/contacts`;
+      console.log("Fetching from:", apiUrl);
+      const response = await axios.get(apiUrl);
       setContact(response.data);
     } catch (error) {
       console.error("Error fetching articles:", error);
@@ -29,6 +28,7 @@ const Index = () => {
   const getAbsoluteURL = (relativePath) => {
     return `${import.meta.env.VITE_API_URL}${relativePath}`;
   };
+
   return (
     <>
       <section>
@@ -63,14 +63,14 @@ const Index = () => {
                 <a href="/login">Masuk &gt;&gt;</a>
               </span>
             </div>
-            <img src={ResepImage2} alt="" />
+            <img src={ResepImage2} alt="Resep" />
           </div>
         </div>
       </section>
       <section>
         <div className="resep-container">
           <div className="resep" data-aos="fade-right">
-            <img src={ResepImage3} alt="" />
+            <img src={ResepImage3} alt="Resep" />
             <div className="resep-text">
               <h1>Buat dan bagikan pengalamanmu</h1>
               <p>
