@@ -1,0 +1,2871 @@
+@import url("https://fonts.googleapis.com/css2?family=Imprima&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  overflow-x: hidden;
+  /* background: url(../../assets/img/pattern.png); */
+  color: rgb(0, 0, 0);
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  /* background-image: url(img/p4.jpg); */
+}
+.hero1 {
+  width: 100%;
+  height: 70vh;
+  /* background-image: url(img/p4.jpg); */
+}
+.logo {
+  transition: 0.5s ease-in-out;
+}
+nav a img {
+  width: 120px;
+  height: auto;
+  margin-right: 5px;
+}
+.logo1 {
+  display: none;
+}
+/* Gaya dasar untuk navbar */
+nav {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  background: #fff;
+  justify-content: space-between;
+  padding: 20px 20px;
+  height: 70px;
+  align-items: center;
+  transition: background-color 0.3s ease, top 0.9s ease-in-out;
+  z-index: 4000;
+  animation: fadeInDown 1s ease-in-out;
+  animation-duration: 1s;
+  -webkit-animation: fadeInDown 1s ease-in-out;
+}
+
+.groub {
+  display: flex;
+  align-items: center;
+}
+
+.groub ul {
+  display: flex;
+  transition: 0.5s ease-in-out;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.groub ul li a {
+  color: rgb(0, 0, 0);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.groub ul li {
+  position: relative;
+  display: inline;
+  margin-right: 20px;
+  padding: 30px 0;
+}
+
+.groub ul li a:hover {
+  color: #25d366;
+}
+
+.groub ul li a i {
+  font-size: 20px;
+}
+
+.regis a {
+  border: 1px solid #000;
+  padding: 5px 30px;
+  border-radius: 10px;
+}
+
+.login a {
+  background: #86ab55;
+  padding: 5px 30px;
+  border-radius: 10px;
+  color: #fff !important;
+}
+
+/* navbar dropdown */
+.groub .dropdown-content {
+  position: absolute;
+  background-color: #dedede;
+  top: 110px;
+  left: 0;
+  min-width: 160px;
+  z-index: 1;
+  width: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: top 0.3s;
+  -webkit-transition: top 0.3s;
+  -moz-transition: top 0.3s;
+  -ms-transition: top 0.3s;
+  -o-transition: top 0.3s;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.groub .dropdown:hover .dropdown-content {
+  top: 80px;
+  opacity: 1;
+  visibility: visible;
+}
+.groub .dropdown-content a {
+  line-height: 30px;
+  width: auto;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  padding: 8px 15px;
+  display: flex;
+  flex-direction: column;
+}
+/* CSS */
+.kegiatan-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Hindari gaya default tautan */
+  color: black; /* Atur warna teks */
+  flex-direction: row !important;
+}
+
+.dropdown-icon {
+  margin-left: 5px; /* Jarak antara teks dan ikon */
+  font-size: 15px; /* Ubah ukuran ikon sesuai kebutuhan */
+  text-align: center;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.dropdown-icon2 {
+  font-size: 20px; /* Ubah ukuran ikon sesuai kebutuhan */
+  text-align: center;
+  align-items: center;
+  margin-right: 13px;
+}
+
+.img-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  text-align: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+/* Kelas untuk warna navbar saat di-scroll */
+.scrolled {
+  position: fixed;
+  background: #ffffff;
+  color: #000;
+  animation: slideDown 0.9s ease-in-out; /* Add animation to sticky state */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.19);
+}
+
+.scrolled .nav-links li a {
+  color: #000;
+}
+
+.scrolled .nav-links li a:hover {
+  color: #25d366;
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  font-size: 25px;
+  margin-right: 20px;
+}
+@media screen and (max-width: 781px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+  .groub ul {
+    background: #ffffff;
+    position: absolute;
+    top: 50%;
+    display: block;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.233);
+    transition: all 0.4s linear;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 1000;
+  }
+  .groub ul li a {
+    display: block;
+    padding: 15px 40px;
+    transition: 0.3s;
+    color: rgb(0, 0, 0);
+  }
+  .groub .dropdown-content a {
+    display: block;
+    padding: 15px 45px;
+    transition: 0.3s;
+    color: rgb(0, 0, 0);
+  }
+  .groub .dropdown-content {
+    position: static;
+    border-top: none;
+    background-color: transparent;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    -webkit-transition: max-height 0.4s ease-out;
+    -moz-transition: max-height 0.4s ease-out;
+    -ms-transition: max-height 0.4s ease-out;
+    -o-transition: max-height 0.4s ease-out;
+  }
+  .groub .dropdown:hover .dropdown-content {
+    max-height: 1000px;
+    transition: max-height 0.4s ease-in;
+    -webkit-transition: max-height 0.4s ease-in;
+    -moz-transition: max-height 0.4s ease-in;
+    -ms-transition: max-height 0.4s ease-in;
+    -o-transition: max-height 0.4s ease-in;
+  }
+  .groub ul li a:hover {
+    background: #e7e7e7;
+    transition: 0.3s;
+    color: rgb(0, 0, 0);
+  }
+  nav.sticky ul a {
+    color: rgb(0, 0, 0);
+  }
+  .groub ul.active {
+    top: 100%;
+    opacity: 1;
+    transition: 0.3s;
+    visibility: visible;
+  }
+  .action .action-box {
+    width: 290px;
+  }
+  .searchBox1 {
+    display: block;
+    padding: 10px 20px;
+  }
+  .search {
+    display: none;
+  }
+  .regis a,
+  .login a {
+    border: none;
+    padding: 0;
+    background: none;
+    color: #000 !important;
+  }
+}
+
+/* background */
+.cont {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #86ab55;
+}
+
+.cont img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+.maskhome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.mask1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: left;
+  margin: 0 8%;
+  animation: fadeInUp 1s ease-in-out;
+  width: 70%;
+}
+
+.text h3 {
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.text h1 {
+  font-size: 70px;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  color: #e68f33;
+  margin-bottom: 10px;
+}
+
+.text hr {
+  width: 90px;
+  background: #000;
+  margin-bottom: 10px;
+}
+
+.text p {
+  font-size: 20px;
+  font-family: "Imprima", sans-serif;
+}
+
+/* Responsivitas untuk background */
+@media screen and (max-width: 1200px) {
+  .text h3 {
+    font-size: 35px;
+  }
+
+  .text h1 {
+    font-size: 60px;
+  }
+
+  .text p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .hero {
+    height: 70vh;
+  }
+  .cont {
+    height: 70vh;
+  }
+  .text {
+    width: 80%;
+    margin: 0 5%;
+  }
+
+  .text h3 {
+    font-size: 30px;
+  }
+
+  .text h1 {
+    font-size: 50px;
+  }
+
+  .text p {
+    font-size: 16px;
+  }
+  .cont img {
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .text {
+    width: 90%;
+    margin: 0 3%;
+    text-align: center;
+  }
+
+  .text h3 {
+    font-size: 25px;
+  }
+
+  .text h1 {
+    font-size: 40px;
+  }
+
+  .text p {
+    font-size: 14px;
+  }
+}
+
+/* Resep */
+section {
+  margin: 9% 8%;
+}
+
+.resep-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  justify-content: center;
+}
+
+.resep,
+.resep2 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Menambahkan margin bawah untuk spasi antar resep */
+}
+
+.resep img {
+  width: 450px;
+  margin-right: 120px;
+}
+
+.resep2 img {
+  width: 450px;
+  margin-left: 120px;
+}
+
+.resep-text h1 {
+  font-size: 40px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 10px;
+}
+
+.resep-text p {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.resep-text span {
+  background: #86ab55;
+  padding: 8px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+/* Responsivitas */
+@media screen and (max-width: 900px) {
+  .resep,
+  .resep2 {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .resep img,
+  .resep2 img {
+    width: 100%;
+    margin: 0 0 20px 0; /* Reset margin and add bottom margin */
+  }
+
+  .resep img {
+    margin-right: 0;
+  }
+
+  .resep2 img {
+    margin-left: 0;
+  }
+
+  .resep-text {
+    margin: 20px 0; /* Add some margin around text */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .resep-text h1 {
+    font-size: 24px;
+  }
+
+  .resep-text p {
+    font-size: 14px;
+  }
+
+  .resep-text span {
+    font-size: 10px;
+  }
+}
+
+/* review */
+.review {
+  padding: 0 10%;
+}
+.review hr {
+  background: #eabf91;
+  height: 5px;
+  border: none;
+  width: 75%;
+  margin: 20px auto;
+}
+
+.review h1 {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.review-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.review-content {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.review .review-image {
+  background: #e68f33;
+  width: 150px;
+  height: 170px;
+  border-radius: 10px;
+}
+
+.review .review-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.review-text {
+  margin: 10px;
+  width: 50%;
+}
+
+.review-stars {
+  color: #86ab55;
+  font-size: 13px;
+}
+
+.review-text h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.review-text p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+}
+
+/* Responsivitas untuk review */
+@media screen and (max-width: 900px) {
+  .review {
+    padding: 0;
+  }
+  .review-content {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .review .review-image {
+    width: 100px;
+    height: 120px;
+  }
+
+  .review-text {
+    width: 80%;
+  }
+
+  .review-text h3 {
+    font-size: 22px;
+  }
+
+  .review-text p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .review hr {
+    width: 90%;
+  }
+
+  .review h1 {
+    font-size: 24px;
+  }
+
+  .review-text h3 {
+    font-size: 15px;
+  }
+
+  .review-text p {
+    font-size: 13px;
+  }
+}
+
+/* footer */
+footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  background: #86ab55;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+footer img {
+  width: 100px;
+}
+
+.footer-text {
+  text-align: center;
+}
+
+.footer-text p {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Sosial media tetap dalam baris */
+.sosmed {
+  display: flex;
+}
+
+.medsos {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 50%;
+  background: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsivitas untuk footer */
+@media screen and (max-width: 900px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer img {
+    margin-bottom: 20px;
+  }
+
+  .footer-text {
+    margin-bottom: 20px;
+  }
+
+  .sosmed {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  footer {
+    padding: 0;
+  }
+
+  footer img {
+    width: 80px;
+  }
+
+  .footer-text p {
+    font-size: 14px;
+  }
+
+  .medsos {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* resep */
+
+/* baclground */
+.cont1 {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+}
+.cont1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mask1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Lebar transparan (sama dengan lebar gambar) */
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  ); /* Opacitiy mask menggunakan gradient dari bawah ke atas */
+}
+
+.text1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Pusatkan teks secara horizontal dan vertikal */
+  text-align: center;
+  width: 70%;
+  color: #000;
+}
+.titlenya {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.titlenya h3 {
+  font-size: 45px;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  color: #000;
+  margin-right: 10px;
+}
+.titlenya img {
+  width: 50px;
+  align-items: center;
+  text-align: center;
+}
+
+.search-input {
+  font-size: 12px;
+  line-height: 21px;
+  color: #000;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  width: 50%;
+  height: 45px;
+  padding: 3px 9px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-top: 20px;
+}
+.text [type="text"]::placeholder {
+  font-family: "Poppins", sans-serif;
+  color: #979797;
+}
+.search-icon {
+  position: absolute;
+  top: 52%;
+  right: 280px; /* Posisi ikon di dalam input */
+  transform: translateY(-50%);
+  color: #000;
+  pointer-events: none; /* Agar ikon tidak mengganggu input */
+  font-size: 20px;
+}
+.list {
+  margin-top: 50px;
+}
+.kategori {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.list span {
+  padding: 3px 7px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin: 0 10px;
+  font-size: 13px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* card */
+.card {
+  margin: 4% 8%;
+}
+.card-box {
+  padding: 0 10%;
+  justify-content: space-between;
+  align-items: center;
+}
+.card h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 600px) {
+  .card-box {
+    padding: 0 1%;
+  }
+}
+
+.item {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+}
+/* .item1 {
+  padding: 4% 8%;
+} */
+
+.box {
+  margin-bottom: 50px;
+  width: 320px;
+  height: 380px;
+  line-height: 20px;
+  position: relative;
+  transition: ease 0.5s;
+  cursor: pointer;
+  background: white;
+  margin: 25px;
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: 0.2s all ease-out;
+}
+.jancok {
+  margin-bottom: 50px;
+  height: 410px;
+  line-height: 20px;
+  position: relative;
+  transition: ease 0.5s;
+  cursor: pointer;
+  background: rgb(255, 255, 255);
+
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: 0.2s all ease-out;
+}
+/* .card-1 {
+  margin-bottom: 50px;
+  height: 380px;
+  line-height: 20px;
+  position: relative;
+  transition: ease 0.5s;
+  cursor: pointer;
+  background: rgb(186, 13, 13);
+
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: 0.2s all ease-out;
+} */
+.card-artikel {
+  margin-bottom: 50px;
+  height: 420px;
+  line-height: 20px;
+  position: relative;
+  transition: ease 0.5s;
+  cursor: pointer;
+  background: white;
+
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: 0.2s all ease-out;
+}
+
+.card-img {
+  background-size: cover;
+  height: 70%;
+  object-fit: cover;
+  background-position: center;
+}
+
+.card-img2 {
+  background-size: cover;
+  height: 70%;
+}
+.card-img3 {
+  background-size: cover;
+  height: 70%;
+}
+.card-text {
+  height: auto;
+  padding: 10px;
+}
+/* .card-text .date{
+  background: red;
+} */
+.card-text h1 {
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 25px;
+  height: 28px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  white-space: normal;
+  margin-bottom: 10px;
+}
+.card-text p {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  color: black;
+}
+.card-text span {
+  font-family: "Poppins", sans-serif;
+  color: #e68f33;
+  font-size: 13px;
+}
+.description {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.duo {
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+  margin-bottom: 10px;
+}
+.icon-card {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.icon-card span {
+  color: #000;
+  margin-left: 7px;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* swiper */
+.custom-pagination {
+  position: relative;
+  margin-top: 20px; /* Sesuaikan nilai ini sesuai kebutuhan */
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  background: #000; /* Sesuaikan warna bullet jika perlu */
+}
+
+.swiper-pagination-bullet-active {
+  background: #007aff; /* Warna bullet aktif */
+}
+
+/* artikel */
+/* Styles umum */
+article {
+  margin: 8% 8%;
+}
+.art {
+  margin: 3% 3%;
+}
+article h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.artikel {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  justify-content: center;
+}
+.link {
+  color: #000;
+}
+.content-artikel {
+  background: #fff;
+  display: flex;
+  width: 970px;
+  height: 250px;
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin: 20px;
+}
+.content-artikel img {
+  width: 355px;
+  height: 100%;
+  object-fit: cover;
+}
+.content-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+}
+.content-text h3 {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 8px;
+  font-size: 30px;
+  font-weight: 400;
+  height: 40px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  white-space: normal;
+}
+.content-text p {
+  font-family: "Poppins", sans-serif;
+  line-height: 25px;
+  font-size: 18px;
+  height: 79px; /* 4 baris x 20px per baris */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  white-space: normal;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .content-artikel {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+  }
+  .content-artikel img {
+    width: 100%;
+    height: auto;
+  }
+  .content-text {
+    margin: 10px;
+  }
+  .content-text h3,
+  .content-text p {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  article {
+    margin: 5% 5%;
+  }
+  .art {
+    margin: 2% 2%;
+  }
+  .content-artikel {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .content-text {
+    margin: 10px;
+  }
+  .content-text h3 {
+    font-size: 20px;
+  }
+  .content-text p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  article {
+    margin: 3% 3%;
+  }
+  .content-artikel {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+  .content-artikel img {
+    width: 100%;
+    height: auto;
+  }
+  .content-text {
+    margin: 5px;
+  }
+  .content-text h3 {
+    font-size: 18px;
+  }
+  .content-text p {
+    font-size: 14px;
+  }
+}
+
+/* artikel detail */
+.detail-artikel-cont {
+  padding: 0 18% 5% 18%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.detail-artikel-content h1 {
+  text-align: start;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+
+.detail-artikel-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.detail-artikel-content .content-text {
+  color: #000; /* Warna teks yang lebih gelap */
+  margin: 20px 0; /* Mengurangi margin untuk menyeimbangkan ruang */
+  padding: 20px; /* Menambahkan padding untuk ruang di dalam elemen */
+  border-radius: 8px; /* Menambahkan border-radius untuk sudut yang lebih halus */
+  font-size: 16px; /* Ukuran font untuk keterbacaan */
+  max-width: 100%; /* Batas maksimal lebar elemen */
+  box-sizing: border-box; /* Memastikan padding dimasukkan dalam ukuran elemen */
+  white-space: pre-wrap; /* Memastikan whitespace di dalam teks di-wrap */
+  overflow-wrap: break-word; /* Memastikan teks yang panjang dipecah dengan baik */
+  text-align: start;
+}
+@media (max-width: 768px) {
+  .detail-artikel-cont {
+    padding: 10px;
+  }
+  .hero1 {
+    height: 40vh;
+  }
+  .cont1 {
+    height: 40vh;
+  }
+
+  .detail-artikel-content h1 {
+    font-size: 1.5em;
+  }
+
+  .detail-artikel-content .content-text {
+    font-size: 14px; /* Ukuran font lebih kecil untuk layar yang lebih kecil */
+    padding: 10px; /* Kurangi padding untuk layar yang lebih kecil */
+  }
+}
+
+/* about  */
+.about {
+  margin: 8% 8%;
+}
+.about-me {
+  margin: 0 8%;
+}
+.about h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  justify-content: center;
+}
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+}
+.about-content .img {
+  text-align: center;
+}
+.about-content .img img {
+  width: 400px;
+  height: auto;
+}
+.about-content .img span {
+  background: #86ab55;
+  padding: 10px;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+}
+span a {
+  color: #fff;
+}
+.about-text p {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .about-content {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    margin: 8% 4%;
+  }
+  .about-me {
+    margin: 0 4%;
+  }
+  .about h1 {
+    font-size: 26px;
+  }
+  .about-content .img img {
+    width: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about {
+    margin: 8% 2%;
+  }
+  .about-me {
+    margin: 0 2%;
+  }
+  .about h1 {
+    font-size: 22px;
+  }
+  .about-content .img img {
+    width: 2 00px;
+  }
+  .about-content .img span {
+    font-size: 10px;
+    padding: 8px;
+  }
+}
+
+/* detail Resep */
+
+.container-memasak {
+  padding: 0 5% 4% 5%;
+}
+.container-memasak h1 {
+  font-family: "Poppins", sans-serif;
+  color: #e68f33;
+  margin-bottom: 10px;
+}
+.detail-memasak {
+  display: flex;
+  justify-content: space-around;
+}
+.detail-memasak img {
+  width: 100%;
+  margin-right: 30px;
+}
+.detail-memasak Youtube {
+  width: 100%;
+  margin-right: 30px;
+}
+.icon-masak {
+  display: flex;
+  justify-content: space-between;
+}
+.detail-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 20px;
+}
+.text-1 h3 {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.text-1 p {
+  font-family: "Poppins", sans-serif;
+  line-height: 20px;
+  font-size: 15px;
+}
+.text-1 span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+hr {
+  padding: 0 5%;
+}
+.favorite-icon {
+  font-size: 20px;
+  align-items: center;
+}
+.share-icon {
+  font-size: 20px;
+  align-items: center;
+}
+.favorite-icon span {
+  font-size: 15px;
+  margin-left: 7px;
+}
+
+.container-bahan-makanan {
+  padding: 0 5% 4% 5%;
+}
+hr {
+  margin-bottom: 30px;
+  height: 23px;
+  background: #e68f33;
+  border-top: none;
+}
+.resep-makanan {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.bahan {
+  width: 100%;
+}
+.bahan h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+}
+.bahan ul li {
+  font-family: "Poppins", sans-serif;
+  line-height: 25px;
+  list-style: disc;
+  margin-left: 30px;
+}
+.cara-masak h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+}
+.cara-masak ul li {
+  font-family: "Poppins", sans-serif;
+  list-style: decimal;
+  margin-left: 30px;
+  line-height: 25px;
+}
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .detail-memasak img {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .detail-memasak iframe {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .detail-memasak,
+  .resep-makanan {
+    flex-direction: column;
+    align-items: center;
+  }
+  .bahan ul li,
+  .cara-masak ul li {
+    width: 100%; /* Mengatur agar list menjadi dua kolom pada layar yang lebih besar dari 768px */
+  }
+}
+
+@media (max-width: 768px) {
+  .text1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(
+      -50%,
+      -400%
+    ); /* Pusatkan teks secara horizontal dan vertikal */
+    text-align: center;
+    width: 70%;
+    color: #000;
+  }
+  .titlenya h3 {
+    font-size: 30px;
+  }
+  .titlenya img {
+    width: 40px;
+  }
+  .text-1 h3 {
+    font-size: 18px;
+  }
+  .text-1 p {
+    font-size: 14px;
+  }
+  .bahan h1,
+  .cara-masak h1 {
+    font-size: 22px;
+  }
+  .bahan ul li,
+  .cara-masak ul li {
+    margin-left: 15px;
+  }
+  .icons {
+    display: flex;
+    justify-content: space-between;
+    width: 30% !important;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-memasak,
+  .container-bahan-makanan,
+  .bahan,
+  .cara-masak {
+    padding: 0 3% 4% 3%;
+  }
+  .text-1 h3 {
+    font-size: 16px;
+  }
+  .text-1 p {
+    font-size: 12px;
+  }
+  .bahan h1,
+  .cara-masak h1 {
+    font-size: 20px;
+  }
+}
+
+/* komentar */
+.komentar {
+  padding: 0 5% 4% 5%;
+}
+
+.title-coment span {
+  font-family: "Poppins", sans-serif;
+  margin-left: 10px;
+}
+
+.form-coment {
+  display: flex;
+  flex-wrap: wrap; /* Mengatur agar item flex dapat melingkupi baris */
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.form-coment img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px; /* Menambahkan margin untuk pemisahan dengan input */
+}
+
+.form-coment input {
+  flex: 1; /* Mengatur agar input dapat mengambil sisa ruang */
+  height: 40px;
+  text-align: start;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding-left: 20px;
+}
+
+.form-coment [type="text"]::placeholder {
+  font-family: "Poppins", sans-serif;
+  color: #000;
+}
+
+.btn-comment {
+  border: none;
+  padding: 10px 20px;
+  background: #25d366;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px; /* Menambahkan margin agar terpisah dengan input */
+}
+
+.comment-section {
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 10px; /* Menyesuaikan padding agar konten lebih lega */
+  border-radius: 5px;
+  margin-left: 60px;
+}
+
+.comment {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.user-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.comment-content {
+  flex: 1; /* Mengatur agar konten dapat mengambil sisa ruang */
+  margin-left: 15px;
+}
+
+.user-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.comment-text {
+  margin-bottom: 5px;
+}
+
+.comment-time {
+  font-size: 0.9em;
+  color: #666;
+}
+
+@media screen and (max-width: 768px) {
+  .comment-section {
+    padding-left: 0;
+  }
+  .form-coment {
+    flex-direction: column; /* Mengatur agar item flex menjadi satu kolom pada layar kecil */
+    align-items: flex-start; /* Mengatur agar input dan tombol berada di kiri */
+  }
+
+  .form-coment input {
+    width: 100%; /* Mengatur agar input mengambil lebar penuh */
+    height: 70px;
+    margin-left: 0; /* Menghapus margin kiri pada input */
+    margin-top: 10px; /* Menambahkan margin atas untuk memisahkan input dengan tombol */
+  }
+
+  .btn-comment {
+    margin-left: 0; /* Menghapus margin kiri pada tombol */
+    margin-top: 10px; /* Menambahkan margin atas untuk memisahkan tombol dari input */
+  }
+}
+
+/* contact */
+
+.contact-form {
+  /* margin: 0 25% 40px; */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* Menambahkan shadow */
+  margin-bottom: 40px;
+}
+.kontak {
+  width: 50%;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+.contact-form h1 {
+  font-family: "Poppins", sans-serif;
+  text-align: start !important;
+}
+
+.contact-form p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.form-contact {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-contact label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-contact input,
+.form-contact textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.form-contact textarea {
+  height: 100px;
+  resize: none;
+}
+
+.btn-cont {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-cont:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+  }
+  .kontak {
+    width: 100%;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* team */
+/* Styles umum */
+.team {
+  padding: 8% 8%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.team img {
+  width: 50%;
+}
+.team h1 {
+  margin-bottom: 70px;
+  font-family: "Poppins", sans-serif;
+  text-align: start;
+}
+
+.follow {
+  padding: 8% 8%;
+}
+.follow h1 {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 50px;
+}
+.sosial {
+  display: flex;
+  justify-content: center;
+}
+.media {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.tw {
+  font-size: 30px;
+  background: #00acee;
+}
+.ig {
+  font-size: 30px;
+  background: radial-gradient(
+      circle farthest-corner at 35% 90%,
+      #fec564,
+      transparent 50%
+    ),
+    radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+    radial-gradient(
+      ellipse farthest-corner at 20% -50%,
+      #5258cf,
+      transparent 50%
+    ),
+    radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+    radial-gradient(
+      ellipse farthest-corner at 60% -20%,
+      #893dc2,
+      transparent 50%
+    ),
+    radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+    linear-gradient(
+      #6559ca,
+      #bc318f 30%,
+      #e33f5f 50%,
+      #f77638 70%,
+      #fec66d 100%
+    );
+}
+.fb {
+  font-size: 30px;
+  background: #3b5998;
+}
+.tt {
+  font-size: 30px;
+  background: #000;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .team {
+    padding: 5% 5%;
+  }
+  .team img {
+    width: 60%;
+  }
+  .team h1 {
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team {
+    padding: 3% 3%;
+  }
+  .team img {
+    width: 70%;
+  }
+  .team h1 {
+    font-size: 24px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .team {
+    padding: 2% 2%;
+  }
+  .team img {
+    width: 80%;
+  }
+  .team h1 {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+/* login */
+
+.login-container {
+  position: relative; /* Ensure positioning context for the overlay */
+  width: 100%;
+  height: 100vh;
+  background: url("img/img-background-1.png") no-repeat center center/cover;
+  overflow: hidden; /* Prevents scrollbars due to blur */
+}
+
+.login-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit; /* Inherit the background from the container */
+  filter: blur(8px); /* Apply the blur effect */
+  z-index: -1; /* Ensure the blurred background is below the overlay */
+}
+
+.login-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(210, 207, 207, 0.7); /* Semi-transparent overlay */
+  z-index: 0; /* Ensure the overlay is above the blurred background but below the content */
+}
+
+.login-content {
+  display: flex;
+  /* text-align: center; */
+  justify-content: space-around;
+  /* align-items: center; */
+  padding: 8%;
+  position: relative;
+  z-index: 1; /* Ensure content is above the pseudo-elements */
+}
+.register-content {
+  display: flex;
+  /* text-align: center; */
+  justify-content: space-around;
+  /* align-items: center; */
+  padding: 2% 8%;
+  position: relative;
+  z-index: 1; /* Ensure content is above the pseudo-elements */
+}
+.login-image {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  text-align: center;
+  justify-content: center;
+}
+.login-image img {
+  width: 350px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.login-image span {
+  font-size: 50px;
+  text-align: start;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  line-height: 60px;
+}
+.login-form {
+  width: 34%;
+  background: #fff;
+  padding: 60px 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.login-form form {
+  display: flex;
+  flex-direction: column;
+}
+.login-form form ul li input {
+  width: 100%;
+  padding: 16px;
+  margin: 10px 0;
+  border: 2px solid rgb(238, 237, 237);
+  border-radius: 4px;
+  font: inherit;
+  color: black;
+  background-color: white;
+}
+.error {
+  color: red;
+  text-align: start;
+  align-items: start;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.check {
+  margin-top: 10px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+.check label {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.check input {
+  margin-right: 10px;
+}
+.btn-daftar {
+  background: #81a84e;
+  border: none;
+  margin-top: 20px;
+  height: 40px;
+  color: #fff;
+}
+.btn-google {
+  background: #efefef;
+  border: none;
+  margin-top: 10px;
+  height: 40px;
+}
+.btn-google .google {
+  margin-right: 10px;
+}
+.login-form form p {
+  font-family: "Poppins", sans-serif;
+  margin-top: 10px;
+}
+.login-form form p a {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* dashboard admin */
+/* SIDEBAR */
+.icon-bar-admin {
+  cursor: pointer;
+}
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background: var(--light);
+  z-index: 2000;
+  font-family: var(--lato);
+  transition: 0.3s ease;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+#sidebar:state(webkit-scrollbar) {
+  display: none;
+}
+
+#sidebar.hide {
+  width: 60px;
+}
+#sidebar .brand {
+  font-size: 24px;
+  font-weight: 700;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  color: var(--blue);
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: var(--light);
+  z-index: 500;
+  padding-bottom: 20px;
+  box-sizing: content-box;
+}
+#sidebar .brand .bx {
+  min-width: 60px;
+  display: flex;
+  justify-content: center;
+}
+#sidebar .side-menu {
+  width: 100%;
+  margin-top: 48px;
+}
+#sidebar .side-menu li {
+  height: 48px;
+  background: transparent;
+  margin-left: 6px;
+  border-radius: 48px 0 0 48px;
+  padding: 4px;
+}
+#sidebar .side-menu li.active {
+  background: var(--grey);
+  position: relative;
+}
+#sidebar .side-menu li.active::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: -40px;
+  right: 0;
+  box-shadow: 20px 20px 0 var(--grey);
+  z-index: -1;
+}
+#sidebar .side-menu li.active::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  bottom: -40px;
+  right: 0;
+  box-shadow: 20px -20px 0 var(--grey);
+  z-index: -1;
+}
+#sidebar .side-menu li a {
+  width: 100%;
+  height: 100%;
+  background: var(--light);
+  display: flex;
+  align-items: center;
+  border-radius: 48px;
+  font-size: 16px;
+  color: var(--dark);
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+#sidebar .side-menu.top li.active a {
+  color: var(--blue);
+}
+#sidebar.hide .side-menu li a {
+  width: calc(48px - (4px * 2));
+  transition: width 0.3s ease;
+}
+#sidebar .side-menu li a.logout {
+  color: var(--red);
+}
+#sidebar .side-menu.top li a:hover {
+  color: var(--blue);
+}
+#sidebar .side-menu li a .bx {
+  min-width: calc(60px - ((4px + 6px) * 2));
+  display: flex;
+  justify-content: center;
+}
+/* SIDEBAR */
+
+/* CONTENT */
+.content-dashboard {
+  position: relative;
+  width: calc(100% - 280px);
+  left: 280px;
+  transition: 0.3s ease;
+}
+#sidebar.hide ~ .content-dashboard {
+  width: calc(100% - 60px);
+  left: 60px;
+}
+
+/* headerBAR */
+.content-dashboard header {
+  height: 56px;
+  background: var(--light);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  grid-gap: 24px;
+  font-family: var(--lato);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.content-dashboard header::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  bottom: -40px;
+  left: 0;
+  border-radius: 50%;
+  box-shadow: -20px -20px 0 var(--light);
+}
+.content-dashboard header a {
+  color: var(--dark);
+}
+.content-dashboard header .bx.bx-menu {
+  cursor: pointer;
+  color: var(--dark);
+}
+.box-info .bx {
+  font-size: 20px;
+}
+.content-dashboard header .header-link {
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+.content-dashboard header .header-link:hover {
+  color: var(--blue);
+}
+.content-dashboard header form {
+  max-width: 400px;
+  width: 100%;
+  margin-right: auto;
+}
+.content-dashboard header form .form-input {
+  display: flex;
+  align-items: center;
+  height: 36px;
+}
+.content-dashboard header form .form-input input {
+  flex-grow: 1;
+  padding: 0 16px;
+  height: 100%;
+  border: none;
+  background: var(--grey);
+  border-radius: 36px 0 0 36px;
+  outline: none;
+  width: 100%;
+  color: var(--dark);
+}
+.content-dashboard header form .form-input button {
+  width: 36px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--blue);
+  color: var(--light);
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 0 36px 36px 0;
+  cursor: pointer;
+}
+.content-dashboard header .notification {
+  font-size: 20px;
+  position: relative;
+}
+.content-dashboard header .notification .num {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--light);
+  background: var(--red);
+  color: var(--light);
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-dashboard header .profile img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.content-dashboard header .switch-mode {
+  display: block;
+  min-width: 50px;
+  height: 25px;
+  border-radius: 25px;
+  background: var(--grey);
+  cursor: pointer;
+  position: relative;
+}
+.content-dashboard header .switch-mode::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  width: calc(25px - 4px);
+  background: var(--blue);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.content-dashboard header #switch-mode:checked + .switch-mode::before {
+  left: calc(100% - (25px - 4px) - 2px);
+}
+/* headerBAR */
+
+/* MAIN */
+.content-dashboard main {
+  width: 100%;
+  padding: 36px 24px;
+  font-family: var(--poppins);
+  max-height: calc(100vh - 56px);
+  overflow-y: auto;
+}
+.content-dashboard main .head-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-gap: 16px;
+  flex-wrap: wrap;
+}
+.content-dashboard main .head-title .left h1 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+.content-dashboard main .head-title .left .breadcrumb {
+  display: flex;
+  align-items: center;
+  grid-gap: 16px;
+}
+.content-dashboard main .head-title .left .breadcrumb li {
+  color: var(--dark);
+}
+.content-dashboard main .head-title .left .breadcrumb li a {
+  color: var(--dark-grey);
+  pointer-events: none;
+}
+.content-dashboard main .head-title .left .breadcrumb li a.active {
+  color: var(--blue);
+  pointer-events: unset;
+}
+.content-dashboard main .head-title .btn-download {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 36px;
+  background: var(--blue);
+  color: var(--light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 10px;
+  font-weight: 500;
+}
+
+.content-dashboard main .box-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 24px;
+  margin-top: 36px;
+}
+.content-dashboard main .box-info li {
+  padding: 24px;
+  background: var(--light);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  grid-gap: 24px;
+}
+.content-dashboard main .box-info li .bx {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-dashboard main .box-info li:nth-child(1) .bx {
+  background: var(--light-blue);
+  color: var(--blue);
+}
+.content-dashboard main .box-info li:nth-child(2) .bx {
+  background: var(--light-yellow);
+  color: var(--yellow);
+}
+.content-dashboard main .box-info li:nth-child(3) .bx {
+  background: var(--light-orange);
+  color: var(--orange);
+}
+.content-dashboard main .box-info li .textt h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--dark);
+}
+.content-dashboard main .box-info li .textt p {
+  color: var(--dark);
+}
+
+.content-dashboard main .table-data {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 24px;
+  margin-top: 24px;
+  width: 100%;
+  color: var(--dark);
+}
+.content-dashboard main .table-data > div {
+  border-radius: 20px;
+  background: var(--light);
+  padding: 24px;
+  overflow-x: auto;
+}
+.content-dashboard main .table-data .head {
+  display: flex;
+  align-items: center;
+  grid-gap: 16px;
+  margin-bottom: 24px;
+}
+.content-dashboard main .table-data .head h3 {
+  margin-right: auto;
+  font-size: 24px;
+  font-weight: 600;
+}
+.content-dashboard main .table-data .head .bx {
+  cursor: pointer;
+}
+
+.content-dashboard main .table-data .order {
+  flex-grow: 1;
+  flex-basis: 500px;
+}
+.content-dashboard main .table-data .order table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.content-dashboard main .table-data .order table th {
+  padding: 12px;
+  font-size: 13px;
+  text-align: left;
+  border-bottom: 1px solid var(--grey);
+}
+.content-dashboard main .table-data .order table td {
+  padding: 20px; /* Adjust the padding value as needed */
+}
+
+.content-dashboard main .table-data .order table tr td:first-child {
+  display: flex;
+  align-items: center;
+  grid-gap: 12px;
+  padding-left: 6px;
+}
+.content-pre {
+  max-width: 100%;
+  overflow: auto;
+  white-space: pre-wrap; /* Ensures content wraps within the pre tag */
+  height: 37px;
+}
+
+.content-dashboard main .table-data .order table td img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.content-dashboard main .table-data .order table tbody tr:hover {
+  background: var(--grey);
+}
+.content-dashboard main .table-data .order table tr td .status {
+  font-size: 10px;
+  padding: 6px 16px;
+  color: var(--light);
+  border-radius: 20px;
+  font-weight: 700;
+}
+.content-dashboard main .table-data .order table tr td .status.completed {
+  background: var(--blue);
+}
+.content-dashboard main .table-data .order table tr td .status.process {
+  background: var(--yellow);
+}
+.content-dashboard main .table-data .order table tr td .status.pending {
+  background: var(--orange);
+}
+
+.content-dashboard main .table-data .todo {
+  flex-grow: 1;
+  flex-basis: 300px;
+}
+.content-dashboard main .table-data .todo .todo-list {
+  width: 100%;
+}
+.content-dashboard main .table-data .todo .todo-list li {
+  width: 100%;
+  margin-bottom: 16px;
+  background: var(--grey);
+  border-radius: 10px;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-dashboard main .table-data .todo .todo-list li .bx {
+  cursor: pointer;
+}
+.content-dashboard main .table-data .todo .todo-list li.completed {
+  border-left: 10px solid var(--blue);
+}
+.content-dashboard main .table-data .todo .todo-list li.not-completed {
+  border-left: 10px solid var(--orange);
+}
+.content-dashboard main .table-data .todo .todo-list li:last-child {
+  margin-bottom: 0;
+}
+/* MAIN */
+/* CONTENT */
+
+@media screen and (max-width: 768px) {
+  #sidebar {
+    width: 200px;
+  }
+
+  .content-dashboard {
+    width: calc(100% - 60px);
+    left: 200px;
+  }
+
+  .content-dashboard header .header-link {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .content-dashboard header form .form-input input {
+    display: none;
+  }
+
+  .content-dashboard header form .form-input button {
+    width: auto;
+    height: auto;
+    background: transparent;
+    border-radius: none;
+    color: var(--dark);
+  }
+
+  .content-dashboard header form.show .form-input input {
+    display: block;
+    width: 100%;
+  }
+  .content-dashboard header form.show .form-input button {
+    width: 36px;
+    height: 100%;
+    border-radius: 0 36px 36px 0;
+    color: var(--light);
+    background: var(--red);
+  }
+
+  .content-dashboard header form.show ~ .notification,
+  .content-dashboard header form.show ~ .profile {
+    display: none;
+  }
+
+  .content-dashboard main .box-info {
+    grid-template-columns: 1fr;
+  }
+
+  .content-dashboard main .table-data .head {
+    min-width: 420px;
+  }
+  .content-dashboard main .table-data .order table {
+    min-width: 420px;
+  }
+  .content-dashboard main .table-data .todo .todo-list {
+    min-width: 420px;
+  }
+}
+
+:root {
+  --poppins: "Poppins", sans-serif;
+  --lato: "Lato", sans-serif;
+
+  --light: #f9f9f9;
+  --blue: #25d366;
+  --light-blue: #cfe8ff;
+  --grey: #eee;
+  --dark-grey: #aaaaaa;
+  --dark: #342e37;
+  --red: #db504a;
+  --yellow: #ffce26;
+  --light-yellow: #fff2c6;
+  --orange: #fd7238;
+  --light-orange: #ffe0d3;
+}
+.input-artikel {
+  font-size: 12px;
+  line-height: 21px;
+  color: #000;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  width: 50%;
+  height: 45px;
+  padding: 3px 9px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-top: 20px;
+}
+.input-file-artikel {
+  margin-top: 20px;
+}
+.save {
+  background: #81a84e;
+  border: none;
+  margin-top: 20px;
+  padding: 10px;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+}
+
+.alert {
+  font-size: 15px;
+  width: 97%;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  background: #ffcaca;
+  padding: 20px 0;
+  color: #ff0000;
+  border-radius: 4px;
+  border-left: 8px solid #f75959;
+  padding-left: 12px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.alert.show {
+  animation: showslides 1s ease forwards;
+  margin-left: 15px;
+}
+@keyframes showslides {
+  0% {
+    transform: translateX(100%);
+  }
+  40% {
+    transform: translateX(-10%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+/* modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px; /* Menambah lebar maksimal */
+  max-height: 80%; /* Menambah tinggi maksimal */
+  text-align: left;
+  box-sizing: border-box;
+  overflow-y: auto; /* Menambahkan overflow-y: auto */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan shadow */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Animasi */
+  transform: scale(1.1);
+}
+.avatar-profile {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  object-fit: cover;
+  margin: 20px;
+}
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px; /* Meningkatkan padding */
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease; /* Animasi border */
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+  border-color: #25d366; /* Mengubah warna border saat fokus */
+  outline: none; /* Menghilangkan outline default */
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Animasi background */
+}
+
+.modal-content .btn {
+  background-color: #25d366;
+  color: white;
+}
+
+.modal-content .btn:hover {
+  background-color: #1da851; /* Warna saat hover */
+}
+
+.modal-content .btn[type="button"] {
+  background-color: #dc3545;
+}
+
+.modal-content .btn[type="button"]:hover {
+  background-color: #c82333; /* Warna saat hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .modal-content button {
+    padding: 10px;
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+.text1 .btn {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  padding: 8px;
+  margin: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+}
+
+/* profile */
+.profile-container {
+  justify-content: center;
+  display: flex;
+  margin: 0 0 5% 0;
+}
+.profile-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 700px;
+  padding: 50px;
+  box-sizing: border-box;
+}
+.profile-card header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.profile-card header img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+.profile-card header .profile-info {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+.profile-card header .profile-info h2 {
+  margin: 0;
+  font-size: 1.2em;
+}
+.profile-card header .profile-info p {
+  margin: 5px 0 0;
+  color: #666;
+}
+.profile-card header .buttons {
+  display: flex;
+  gap: 10px;
+}
+.profile-card header .buttons button {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.profile-card header .buttons .save-btn {
+  background-color: #4caf50;
+  color: #fff;
+}
+.profile-card header .buttons .edit-btn {
+  background-color: #e0e0e0;
+}
+.profile-card .profile-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.profile-card .profile-details div {
+  margin-bottom: 10px;
+}
+.profile-card .profile-details div p {
+  margin: 5px 0;
+}
+.profile-card .keluar {
+  text-align: center;
+  margin-top: 20px;
+}
+.profile-card .keluar button {
+  border: none;
+  padding: 10px 20px;
+  background-color: #d9534f;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 25px;
+    /* margin: 10pxart; */
+  }
+  .profile-card header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .profile-card header .profile-info {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .profile-card header .buttons {
+    width: 100%;
+    margin-top: 10px;
+    justify-content: space-between;
+  }
+  .profile-card .profile-details {
+    grid-template-columns: 1fr;
+  }
+}
+.ant-message {
+  position: fixed;
+  padding: 30px !important;
+  top: 10% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+  z-index: 9000;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+/* .ant-message-notice-content{
+  background-color: #25d366 !important;
+}
+.ant-message-success span{
+  color: white;
+} */
+
+.recipe-card {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+  position: relative;
+}
+
+.recipe-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.recipe-details {
+  padding: 20px;
+  flex: 1;
+}
+
+.recipe-details h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.recipe-details p {
+  margin: 10px 0;
+  color: #555;
+}
+
+.additional-info {
+  margin-top: 10px;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  width: 10%;
+  margin-top: 20px;
+}
+
+.icon {
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+}
