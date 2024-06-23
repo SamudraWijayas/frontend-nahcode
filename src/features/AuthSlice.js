@@ -1,6 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const apiUrl = `${import.meta.env.VITE_API_URL}`;
+
 const initialState = {
   token: localStorage.getItem("token") || null,
   isError: false,
@@ -14,7 +16,7 @@ export const loginUser = createAsyncThunk(
   async ({ email, password }, thunkAPI) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/login`,
+        `${apiUrl}/login`,
         { email, password }
       );
       return response.data;
@@ -28,7 +30,7 @@ export const getMe = createAsyncThunk("auth/getMe", async (_, thunkAPI) => {
   try {
     const state = thunkAPI.getState();
     const token = state.auth.token || localStorage.getItem("token");
-    const response = await axios.get(`${import.meta.env.VITE_API_URL}/me`, {
+    const response = await axios.get(`${apiUrl}/me`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -53,7 +55,7 @@ export const registerUser = createAsyncThunk(
   async (user, thunkAPI) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/register`,
+        `${apiUrl}/register`,
         user
       );
       return response.data;
@@ -71,7 +73,7 @@ export const updateProfile = createAsyncThunk(
   async ({ id, formData, token }, thunkAPI) => {
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_API_URL}/users/${id}`,
+        `${apiUrl}/users/${id}`,
         formData,
         {
           headers: {
