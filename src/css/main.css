@@ -1415,7 +1415,7 @@ hr {
 }
 .cara-masak ul li {
   font-family: "Poppins", sans-serif;
-  list-style: decimal;
+  /* list-style: decimal; */
   margin-left: 30px;
   line-height: 25px;
 }
