@@ -841,18 +841,37 @@ footer img {
   justify-content: center;
   text-align: center;
   align-items: center;
+  flex-wrap: wrap; /* Menambahkan flex-wrap */
 }
+
 .list span {
   padding: 3px 7px;
   border: 1px solid #000;
   border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  margin: 0 10px;
+  margin: 0 20px;
   font-size: 13px;
   font-family: "Poppins", sans-serif;
+}
+
+/* Media query untuk perangkat dengan lebar maksimal 768px (tablet dan mobile) */
+@media (max-width: 768px) {
+  .list span {
+    font-size: 12px;
+    padding: 5px;
+    margin: 5px;
+  }
+}
+
+/* Media query untuk perangkat dengan lebar maksimal 480px (mobile) */
+@media (max-width: 480px) {
+  .list span {
+    font-size: 11px;
+    padding: 4px;
+    margin: 4px;
+  }
+  .search-input {
+    width: 100%;
+  }
 }
 
 /* card */
@@ -1192,7 +1211,7 @@ article h1 {
     padding: 10px;
   }
   .hero1 {
-    height: 40vh;
+    height: 60vh;
   }
   .cont1 {
     height: 40vh;
@@ -1425,13 +1444,7 @@ hr {
 
 @media (max-width: 768px) {
   .text1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(
-      -50%,
-      -400%
-    ); /* Pusatkan teks secara horizontal dan vertikal */
+    position: relative;
     text-align: center;
     width: 70%;
     color: #000;
