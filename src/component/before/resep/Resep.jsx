@@ -6,10 +6,14 @@ import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import NavbarBefore from "../../NavbarBefore"; // Pastikan nama komponen benar
 import Background from "../../../assets/img/img-background-2.png";
 import Icon from "../../../assets/img/icon/icon-coverfood.png";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const Resep = () => {
   const [kategori, setKategori] = useState([]);
   const [searchTerm, setSearchTerm] = useState(""); // State untuk menyimpan nilai input pencarian
+  const [loadingKategori, setLoadingKategori] = useState(true); // State untuk loading kategori
+  const [loadingResep, setLoadingResep] = useState(true); // State untuk loading resep
 
   useEffect(() => {
     const getKategori = async () => {
@@ -20,6 +24,8 @@ const Resep = () => {
         setKategori(response.data);
       } catch (error) {
         console.error("Error fetching categories:", error);
+      } finally {
+        setLoadingKategori(false);
       }
     };
 
@@ -61,6 +67,8 @@ const Resep = () => {
       }
     } catch (error) {
       console.error("Error fetching recipes:", error);
+    } finally {
+      setLoadingResep(false);
     }
   };
 
@@ -161,55 +169,46 @@ const Resep = () => {
               </div>
               <i className="fa-solid fa-magnifying-glass search-icon"></i>
             </form>
-            {/* <div className="kategori">
-              {kategori.map((kategoriItem) => (
-                <Link
-                  to={`/kategori/${kategoriItem.kategori}`}
-                  key={kategoriItem.id}
-                  className="link"
-                >
-                  <div className="list">
-                    <span>{kategoriItem.kategori}</span>
-                  </div>
-                </Link>
-              ))}
-            </div> */}
           </div>
         </div>
       </div>
 
       <section className="card">
         <div className="item">
-          {filteredResep.map((data) => (
-            <Link to={`/detailbef/${data.id}`} key={data.id}>
-              <div
-                className="box"
-                data-aos="fade-up"
-                data-aos-delay={data.delay}
-              >
+          {loadingResep ? (
+            <Skeleton count={6} height={300} />
+          ) : (
+            filteredResep.map((data) => (
+              <Link to={`/detailbef/${data.id}`} key={data.id}>
                 <div
-                  className="card-img"
-                  style={{
-                    backgroundImage: `url(${import.meta.env.VITE_API_URL}${
-                      data.gambar
-                    })`,
-                  }}
-                ></div>
-                <div className="card-text">
-                  <div className="duo">
-                    <p>{getCategoryName(data.kategoriId)}</p>
-                    <div className="icon-card">
-                      <FontAwesomeIcon icon={faBookmark} color={"black"} />
-                      <span>{recipeFavoriteCounts[data.id] || 0}</span>{" "}
-                      {/* Menampilkan jumlah favorit */}
+                  className="box"
+                  data-aos="fade-up"
+                  data-aos-delay={data.delay}
+                >
+                  <div
+                    className="card-img"
+                    style={{
+                      backgroundImage: `url(${import.meta.env.VITE_API_URL}${
+                        data.gambar
+                      })`,
+                    }}
+                  ></div>
+                  <div className="card-text">
+                    <div className="duo">
+                      <p>{getCategoryName(data.kategoriId)}</p>
+                      <div className="icon-card">
+                        <FontAwesomeIcon icon={faBookmark} color={"black"} />
+                        <span>{recipeFavoriteCounts[data.id] || 0}</span>{" "}
+                        {/* Menampilkan jumlah favorit */}
+                      </div>
                     </div>
+                    <h1>{data.judul}</h1>
+                    <span>Lihat Resep &gt;&gt;</span>
                   </div>
-                  <h1>{data.judul}</h1>
-                  <span>Lihat Resep &gt;&gt;</span>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))
+          )}
         </div>
       </section>
     </>

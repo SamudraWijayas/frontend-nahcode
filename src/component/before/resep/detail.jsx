@@ -4,6 +4,8 @@ import axios from "axios";
 import { message } from "antd";
 import YouTube from "react-youtube"; // Import YouTube component
 import NavbarBefore from "../../NavbarBefore"; // Pastikan nama komponen benar
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css"; // Import Skeleton CSS
 
 import Background from "../../../assets/img/img-background-2.png";
 import Icon from "../../../assets/img/icon/icon-chef.png";
@@ -120,7 +122,36 @@ const Detail = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <>
+        <NavbarBefore />
+        <div className="container-memasak">
+          <h1><Skeleton width={200} /></h1>
+          <div className="detail-memasak">
+            <Skeleton height={315} width={560} />
+            <div className="detail-text">
+              <div className="text-1">
+                <h3><Skeleton width={100} /></h3>
+                <p><Skeleton count={3} /></p>
+              </div>
+              <div className="text-1">
+                <h3><Skeleton width={150} /></h3>
+                <p><Skeleton width={100} /></p>
+              </div>
+              <div className="text-1">
+                <h3><Skeleton width={100} /></h3>
+                <span><Skeleton width={100} /></span>
+                <p><Skeleton width={200} /></p>
+              </div>
+              <div className="icons">
+                <Skeleton circle={true} height={30} width={30} />
+                <Skeleton circle={true} height={30} width={30} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
   }
 
   if (!recipe) {
