@@ -239,7 +239,7 @@ const Dashboard = () => {
                     <tr>
                       <th>User</th>
                       <th>Email</th>
-                      <th>Status</th>
+                      <th>Role</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
@@ -262,9 +262,7 @@ const Dashboard = () => {
                           <p>{user.name}</p>
                         </td>
                         <td>{user.email}</td>
-                        <td>
-                          <span className="status completed">Completed</span>
-                        </td>
+                        <td>{user.role}</td>
                         <td>
                           <button onClick={() => openEditUser(user)}>
                             Edit
